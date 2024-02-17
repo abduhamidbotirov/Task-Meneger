@@ -1,0 +1,14 @@
+.homeContainer {
+  height: 100vh !important;
+  display: flex !important;
+}
+
+.homeBody {
+  width: 80%;
+  background-color: rgb(186, 178, 178);
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  overflow-y: scroll;
+}
