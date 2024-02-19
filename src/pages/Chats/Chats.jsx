@@ -1,50 +1,52 @@
-import React from "react";
+import {useState} from "react";
 import { useParams } from "react-router-dom";
 import "./Chat.css";
+import ChatHeader from "../../companents/ChatCard/ChatCard";
 const Chats = () => {
   const { id } = useParams();
   console.log("id :", id);
 
 
 
-//   const [chat, setChats] = useState([
-//     {
-//         role: "worker",
-//         content: `Assalomu alekum.
-//     Men vazifani bajarib bo'ldim
-//     `
-//     },
-//     {
-//         role: "manager",
-//         content: `Valekum assalom assalomu alekum.
-//          Vazifani bajarib bo'lgan bo'lsangiz yaxshi. Yangi vazifa yuklab beraman.
-//         `
-//     },
-//     {
-//         role: "worker",
-//         content: `Assalomu alekum.
-//         Ho'p bo'ladi. Kutib qolaman.
-//         `
-//     },
-//     {
-//         role: "worker",
-//         content: `Assalomu alekum.
-//     Men vazifani bajarib bo'ldim
-//     `
-//     },
-//     {
-//         role: "manager",
-//         content: `Valekum assalom assalomu alekum.
-//          Vazifani bajarib bo'lgan bo'lsangiz yaxshi. Yangi vazifa yuklab beraman.
-//         `
-//     },
-//     {
-//         role: "worker",
-//         content: `Assalomu alekum.
-//         Ho'p bo'ladi. Kutib qolaman.
-//         `
-//     },
-// ])
+  const [chat, setChats] = useState([
+
+    {
+        role: "worker",
+        content: `Assalomu alekum.
+    Men vazifani bajarib bo'ldim
+    `
+    },
+    {
+        role: "manager",
+        content: `Valekum assalom assalomu alekum.
+         Vazifani bajarib bo'lgan bo'lsangiz yaxshi. Yangi vazifa yuklab beraman.
+        `
+    },
+    {
+        role: "worker",
+        content: `Assalomu alekum.
+        Ho'p bo'ladi. Kutib qolaman.
+        `
+    },
+    {
+        role: "worker",
+        content: `Assalomu alekum.
+    Men vazifani bajarib bo'ldim
+    `
+    },
+    {
+        role: "manager",
+        content: `Valekum assalom assalomu alekum.
+         Vazifani bajarib bo'lgan bo'lsangiz yaxshi. Yangi vazifa yuklab beraman.
+        `
+    },
+    {
+      role: "worker",
+      content: `Assalomu alekum.
+      Ho'p bo'ladi. Kutib qolaman.
+      `
+  },
+])
 
 
 
@@ -76,7 +78,24 @@ const Chats = () => {
             <h3>Project name</h3>
             <p>13 a'zo</p>
           </div>
-          <div className="chatWrapsMain-body"></div>
+          <div className="chatWrapsMain-body">
+
+
+           {
+              chat.map((item) => {
+                return <div className="chatContentWraper">
+                  <h6>Tesha</h6>
+                  <li className="chatContetnt">{item.content}</li>
+                   </div>
+
+              })
+            }
+
+               <div className="chatContentWraper myContentWrap">
+                <h6>Muhammadamin</h6>
+                <li className="chatContetnt myContent">Salom qelesiilar</li> 
+               </div>
+          </div>
           <div className="chatWrapsMain-footer ">
             <div className="wrapper">
               <div className="file-upload">
